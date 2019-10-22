@@ -1,7 +1,7 @@
 ### fullpage项目意义
     串联 工具使用 ES6 ES5
 
-### 开发环境的搭建
+### 项目初始化
     1. 初始化项目的描述文件  package.json
     2. 初始化readme.md文件
     3. 初始化编辑器的风格约束文件 .editorconfig
@@ -13,7 +13,7 @@
         sass
           npm i sass -D
         postcss
-          npm i postcss autoprefixer -D
+          npm i postcss-cli autoprefixer -D
     6. 初始化js相关的配置
          webpack
            npm i webpack@3.10.0 -D

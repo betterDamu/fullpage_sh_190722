@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dosass": "sass ./src/css/index.scss  ./dist/css/index.css",
+    "dopostcss": "postcss ./dist/css/index.css -o ./dist/css/index.min.css",
+    "dowebapck": "webpack ./src/js/index.js  ./dist/js/index.js",
+    "dobabel": "babel ./dist/js/index.js -o ./dist/js/index.min.js",
+    "docopy":"node ./util/copy.js"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +26,8 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "postcss": "^7.0.18",
+    "fs-extra": "^8.1.0",
+    "postcss-cli": "^6.1.3",
     "sass": "^1.23.0",
     "webpack": "^3.10.0"
   }
