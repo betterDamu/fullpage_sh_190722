@@ -7,9 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dosass": "sass ./src/css/index.scss  ./dist/css/index.css",
     "dopostcss": "postcss ./dist/css/index.css -o ./dist/css/index.min.css",
-    "dowebapck": "webpack ./src/js/index.js  ./dist/js/index.js",
+    "dowebpack": "webpack ./src/js/index.js  ./dist/js/index.js",
     "dobabel": "babel ./dist/js/index.js -o ./dist/js/index.min.js",
-    "docopy":"node ./util/copy.js"
+    "docopy":"node ./util/copy.js",
+
+    "dosassDev": "sass --watch ./src/css/index.scss  ./src/css/index.min.css",
+    "dowebpackDev": "webpack --watch ./src/js/index.js  ./src/js/index.min.js"
   },
   "keywords": [],
   "author": "",
