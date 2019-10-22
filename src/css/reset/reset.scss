@@ -66,7 +66,15 @@ blockquote:after,
 q:before,
 q:after {content: ''; content: none;}
 
-a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;//add
+  display: block;//add
+}
 
 del {text-decoration: line-through;}
 
@@ -133,3 +141,6 @@ input[type=button] {width: auto; overflow: visible;}
    (commented out as usage is rare, and the filter syntax messes with some pre-processors)
 .ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
 */
+img{
+  display: block;
+}

@@ -81,6 +81,8 @@ a {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  text-decoration: none;
+  display: block;
 }
 
 del {
@@ -220,6 +222,10 @@ input[type=button] {
    (commented out as usage is rare, and the filter syntax messes with some pre-processors)
 .ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
 */
+img {
+  display: block;
+}
+
 .clearfix {
   zoom: 1;
 }
@@ -229,9 +235,85 @@ input[type=button] {
   clear: both;
 }
 
-#app {
-  width: 100px;
-  height: 100px;
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+html body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+html body #app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+html body #app .head {
+  position: relative;
+  width: 100%;
+  background: white !important;
+}
+html body #app .head .headMain {
+  width: 1100px;
+  height: 80px;
+  margin: 0 auto;
+}
+html body #app .head .headMain .logo {
+  margin-top: 30px;
+  float: left;
+}
+html body #app .head .headMain .nav {
+  margin-top: 50px;
+  float: right;
+}
+html body #app .head .headMain .nav .item {
+  float: left;
+  margin-left: 40px;
+}
+html body #app .head .headMain .nav .item > a {
+  position: relative;
+}
+html body #app .head .headMain .nav .item > a > span {
+  color: #009EE0;
+  transition: width 0.5s;
+  display: block;
+}
+html body #app .head .headMain .nav .item > a > span:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: black;
+  width: 0px;
+  overflow: hidden;
+}
+html body #app .head .headMain .nav .item:hover > a > span:nth-child(2) {
+  width: 100%;
+}
+html body #app .head .headMain .nav .item:nth-child(1) {
+  margin-top: 2px;
+}
+html body #app .head .headMain .nav .item.active > a > span:nth-child(2) {
+  width: 100%;
+}
+html body #app .head .headMain .arrow {
+  transition: left 0.5s;
+  z-index: 9;
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  width: 21px;
+  height: 11px;
+  background: url("../../static/img/menuIndicator.png") no-repeat;
+}
+html body #app .content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 80px;
+  bottom: 0;
   background: gray;
 }
 
