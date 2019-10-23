@@ -37,7 +37,6 @@ html {
 /* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
 /* Responsive images and other embedded objects */
 /* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
-img,
 object,
 embed {
   max-width: 100%;
@@ -314,7 +313,81 @@ html body #app .content {
   right: 0;
   top: 80px;
   bottom: 0;
-  background: gray;
+  overflow: hidden;
+}
+html body #app .content .list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s linear;
+}
+html body #app .content .list li {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+html body #app .content .list li div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 1100px;
+  height: 520px;
+}
+html body #app .content .list li.home {
+  background-image: url("../../static/img/bg1.jpg");
+}
+html body #app .content .list li.home div {
+  background: pink;
+}
+html body #app .content .list li.course {
+  background-image: url("../../static/img/bg2.jpg");
+}
+html body #app .content .list li.course div {
+  background: deeppink;
+}
+html body #app .content .list li.works {
+  background-image: url("../../static/img/bg3.jpg");
+}
+html body #app .content .list li.works div {
+  background: hotpink;
+}
+html body #app .content .list li.about {
+  background-image: url("../../static/img/bg4.jpg");
+}
+html body #app .content .list li.about div {
+  background: yellow;
+}
+html body #app .content .list li.team {
+  background-image: url("../../static/img/bg5.jpg");
+}
+html body #app .content .list li.team div {
+  background: greenyellow;
+}
+html body #app .content .points {
+  position: fixed;
+  right: 15px;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 25px;
+  height: 150px;
+}
+html body #app .content .points li {
+  width: 25px;
+  height: 25px;
+  border: 2px solid green;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+html body #app .content .points li.active {
+  background: white;
+}
+html body #app .content .points li:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.min.css.map */

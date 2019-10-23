@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>声明的优先级</title>
+    <style>
+        /*0 1 0 0*/
+        #app{
+           width: 100px;
+           height: 100px;
+           background-color:red;
+         }
+        /*0 0 3 0*/
+        .item,.item,.item{
+          background-color:gray;
+        }
+
+        /* 0 0 0 1*/
+        div{
+          background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <!--1 0 0 0-->
+    <div id="app" class="item" style="background-color:pink!important; "></div>
+</body>
+</html>
