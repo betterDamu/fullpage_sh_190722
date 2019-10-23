@@ -125,9 +125,9 @@ html{
               }
             }
             &.works{
-              background-image:url("../../static/img/bg3.jpg") ;
-              div{
-                background: hotpink;
+              background-image:url("../../static/img/bg1.jpg") ;
+              & > div{
+
               }
             }
             &.about{

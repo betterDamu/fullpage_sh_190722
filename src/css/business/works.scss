@@ -1,0 +1,110 @@
+@import "../extend/extend";
+@import "../animation/animation";
+#app{
+  .content{
+    .list{
+      li{
+        &.works{
+          & > div{
+            .works-1{
+              @extend .commonTitle;
+              margin: 50px 0px 100px 50px;
+            }
+            .works-2{
+              margin-left: 50px;
+              & > .list{
+                @extend .clearfix;
+                & > .item{
+                  position: relative;
+                  float: left;
+                  width: 220px;
+                  height: 133px;
+                  margin: 0 1px;
+                  overflow: hidden;
+                  & > span{
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    &.pic{
+                      transition: transform .5s linear;
+                      background-repeat:no-repeat;
+                    }
+                    &.mask{
+                      background: rgba(25,25,25,0.8);
+                      color: white;
+                      padding: 15px;
+                      opacity: 0;
+                      transition: opacity .5s;
+                      .icon{
+                        display: block;
+                        width: 32px;
+                        height: 34px;
+                        margin: 0 auto;
+                        margin-top: 10px;
+                        background: url("../../static/img/zoomico.png") no-repeat;
+                        transition:background-position .5s ;
+                        &:hover{
+                          background-position:0 -36px ;
+                        }
+                      }
+                    }
+                  }
+                  &:hover{
+                    & > span{
+                      &.pic{
+                        transform: rotate(45deg) scale(1.5);
+                      }
+                      &.mask{
+                        opacity: 1;
+                      }
+                    }
+                  }
+                  &:nth-child(1){
+                    & > span{
+                      &.pic{
+                        background-image:url("../../static/img/worksimg1.jpg") ;
+                      }
+                    }
+                  }
+                  &:nth-child(2){
+                    & > span{
+                      &.pic{
+                        background-image:url("../../static/img/worksimg2.jpg") ;
+                      }
+                    }
+                  }
+                  &:nth-child(3){
+                    & > span{
+                      &.pic{
+                        background-image:url("../../static/img/worksimg3.jpg") ;
+                      }
+                    }
+                  }
+                  &:nth-child(4){
+                    width: 332px;
+                    & > span{
+                      &.pic{
+                        background-image:url("../../static/img/worksimg4.jpg") ;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .works-3{
+              position: absolute;
+              left: 900px;
+              top: 170px;
+              width: 167px;
+              height: 191px;
+              background:url("../../static/img/robot.png") no-repeat ;
+              animation: move 2s linear infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+}

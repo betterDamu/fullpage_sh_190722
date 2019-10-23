@@ -8,7 +8,7 @@ window.onload=function () {
   var contentNode = document.querySelector("html body #app .content");
   var pointNodes = document.querySelectorAll("html body #app .content .points li");
 
-  move(1);
+  move(2);
   //头部逻辑 小圆点逻辑
   arrow.style.left = (homeNode.offsetLeft + (homeNode.offsetWidth/2) - (arrow.offsetWidth/2) )+"px";
   if(liNodes.length === pointNodes.length){
