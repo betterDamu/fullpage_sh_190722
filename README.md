@@ -1,3 +1,6 @@
+### 忽略已提交的文件
+  git rm --cached 文件
+
 ### fullpage项目意义
     串联 工具使用 ES6 ES5
 
