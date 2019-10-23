@@ -96,18 +96,18 @@ html{
         top: 80px;
         bottom: 0;
         overflow: hidden;
-        .list{
+        & > .list{
           position: absolute;
           left: 0;
           top: 0;
           width: 100%;
           transition: top .3s linear;
-          li{
+          & > li{
             position: relative;
             background-repeat: no-repeat;
             //百分比参照于 元素的尺寸 减去 背景图的尺寸
             background-position: 50% 50%;
-            div{
+            & > div{
               @include V-H-Center();
               width: 1100px;
               height: 520px;
@@ -120,8 +120,8 @@ html{
             }
             &.course{
               background-image:url("../../static/img/bg2.jpg") ;
-              div{
-                background: deeppink;
+              & > div{
+
               }
             }
             &.works{

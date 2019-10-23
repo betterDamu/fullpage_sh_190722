@@ -11,7 +11,7 @@ window.onresize=function () {
   var liNodes = document.querySelectorAll("html body #app .head .headMain .nav .item");
   var homeNode = liNodes[0];
   var arrow = document.querySelector("html body #app .head .headMain .arrow");
-  var contentLiNodes = document.querySelectorAll("html body #app .content .list li");
+  var contentLiNodes = document.querySelectorAll("html body #app .content > .list > li");
   var contentNode = document.querySelector("html body #app .content");
   var pointNodes = document.querySelectorAll("html body #app .content .points li");
 
