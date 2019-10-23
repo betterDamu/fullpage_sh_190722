@@ -4,3 +4,5 @@
 node_modules
 *.log
 dist
+src/css/index.min.css
+src/js/index.min.js
