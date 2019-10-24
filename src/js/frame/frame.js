@@ -1,6 +1,8 @@
 import move from "./move/move"
 import wheelCallback from "./wheel/callback.js"
-window.onload=function () {
+
+
+export default function(){
   var liNodes = document.querySelectorAll("html body #app .head .headMain .nav .item");
   var homeNode = liNodes[0];
   var arrow = document.querySelector("html body #app .head .headMain .arrow");
@@ -8,7 +10,7 @@ window.onload=function () {
   var contentNode = document.querySelector("html body #app .content");
   var pointNodes = document.querySelectorAll("html body #app .content .points li");
 
-  move(2);
+  move(0);
   //头部逻辑 小圆点逻辑
   arrow.style.left = (homeNode.offsetLeft + (homeNode.offsetWidth/2) - (arrow.offsetWidth/2) )+"px";
   if(liNodes.length === pointNodes.length){
@@ -45,5 +47,5 @@ window.onload=function () {
       wheelCallback(event,contentNode.index)
     },50)
   }
-
 }
+

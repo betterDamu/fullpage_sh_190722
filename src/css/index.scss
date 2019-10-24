@@ -1,6 +1,9 @@
 @import "./reset/reset";
 @import "./mixin/mixin";
 @import "./extend/extend";
+@import "./font/font";
+
+
 @import "./business/home";
 @import "./business/course";
 @import "./business/works";
@@ -114,21 +117,12 @@ html{
             }
             &.home{
               background-image:url("../../static/img/bg1.jpg") ;
-              div{
-                background: pink;
-              }
             }
             &.course{
               background-image:url("../../static/img/bg2.jpg") ;
-              & > div{
-
-              }
             }
             &.works{
               background-image:url("../../static/img/bg1.jpg") ;
-              & > div{
-
-              }
             }
             &.about{
               background-image:url("../../static/img/bg4.jpg") ;

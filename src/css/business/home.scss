@@ -1,0 +1,82 @@
+@import "../extend/extend";
+@import "../animation/animation";
+#app{
+  .content{
+    .list{
+      li{
+        &.home{
+          & > div{
+            .home-list{
+              position: relative;
+              width: 100%;
+              height: 100%;
+              transform-style: preserve-3d;
+              perspective: 1000px;
+              .home-item{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                color: white;
+                font: 80px/520px laofu;
+                font-weight:800;
+                text-align: center;
+                visibility: hidden;
+                &:nth-child(1){
+                  background:#dc6c5f;
+                }
+                &:nth-child(2){background:#95dc84;}
+                &:nth-child(3){background:#64b9d2;}
+                &:nth-child(4){background:#000000;}
+                &.active{
+                  visibility: visible;
+                }
+                &.leftHide{
+                  transform: translateX(0px) translateZ(-200px) rotateY(0deg) scale(.8);
+                  visibility: hidden;
+                  animation: leftHide linear 1 1s;
+                }
+                &.rightShow{
+                  transform: translateX(0px) rotateY(0deg) scale(1);
+                  visibility: visible;
+                  animation: rightShow linear 1 1s;
+                }
+                &.rightHide{
+                  transform: translateX(0px) translateZ(-200px) rotateY(0deg) scale(.8);
+                  visibility: hidden;
+                  animation: rightHide linear 1 1s;
+                }
+                &.leftShow{
+                  transform: translateX(0px) translateZ(0px) rotateY(0deg) scale(1);
+                  visibility: visible;
+                  animation: leftShow linear 1 1s;
+                }
+              }
+            }
+            .home-points{
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              font-size: 0;
+              text-align: center;
+              .home-point{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                margin: 2px;
+                border-radius:50%;
+                background: rgba(255,255,255,0.5);
+                box-shadow: 0 0 4px rgba(25,25,25,0.8);
+                &.active{
+                  background: rgba(255,255,255,1);;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

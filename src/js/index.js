@@ -1,10 +1,11 @@
 // import "@babel/polyfill"
-import "./frame/frame"
-import "./business/home"
-import "./business/course"
-import "./business/works"
-import "./business/about"
-import "./business/team"
+import frameFn from "./frame/frame"
+import homeFn from "./business/home"
+//效果
+window.onload=function () {
+  frameFn();
+  homeFn();
+}
 
 // 处理用户缩放操作
 window.onresize=function () {
