@@ -1,0 +1,81 @@
+@import "../extend/extend";
+@import "../animation/animation";
+#app{
+  .content{
+    .list{
+      li{
+        &.about{
+          & > div{
+            .about-1{
+              @extend .commonTitle;
+              margin: 50px 0 100px 50px;
+            }
+            .about-2{
+              @extend .commonText;
+              width: 400px;
+              margin-left: 50px;
+            }
+            .box{
+              box-sizing: content-box;
+              position: relative;
+              width: 260px;
+              height: 200px;
+              border: 5px solid rgba(255,255,255,0.5);
+              border-radius: 8px;
+              overflow: hidden;
+              & > span{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                transform: scale(1.5);
+                transition:transform 1s;
+              }
+              & > ul{
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                overflow: hidden;
+                & > li{
+                  position: relative;
+                  float: left;
+                  overflow: hidden;
+                  img{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    transition: 1s left , 1s top;
+                  }
+                }
+              }
+              &.about-3{
+                position: absolute;
+                left:750px;
+                top:50px;
+                & > span{
+                  background: url("../../static/img/about2.jpg");
+                }
+              }
+              &.about-4{
+                position: absolute;
+                left:600px;
+                top:290px;
+                & > span{
+                  background: url("../../static/img/about4.jpg");
+                }
+              }
+              &:hover{
+                & > span{
+                  transform: scale(1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
