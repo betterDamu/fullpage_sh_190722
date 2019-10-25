@@ -1,12 +1,14 @@
 // import "@babel/polyfill"
 import frameFn from "./frame/frame"
-import homeFn from "./business/home"
 import aboutFn from "./business/about"
+import teamFn from "./business/team"
+import maskFn from "./business/mask"
 //效果
 window.onload=function () {
   frameFn();
-  homeFn();
   aboutFn();
+  teamFn();
+  maskFn()
 }
 
 // 处理用户缩放操作

@@ -8,17 +8,22 @@
             .course-1{
               @extend .commonTitle;
               margin: 50px;
+              position: relative;
+              z-index: 5;
             }
             .course-2{
               @extend .commonText;
               width: 400px;
               margin-left: 50px;
+              position: relative;
+              z-index: 5;
             }
             .course-3{
               width: 480px;
               position: absolute;
               right: 50px;
               top: 70px;
+              z-index: 5;
               .list{
                 @extend .clearfix;
                 .item{

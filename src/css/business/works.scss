@@ -9,9 +9,13 @@
             .works-1{
               @extend .commonTitle;
               margin: 50px 0px 100px 50px;
+              position: relative;
+              z-index: 5;
             }
             .works-2{
               margin-left: 50px;
+              position: relative;
+              z-index: 5;
               & > .list{
                 @extend .clearfix;
                 & > .item{
@@ -95,6 +99,7 @@
             }
             .works-3{
               position: absolute;
+              z-index: 5;
               left: 900px;
               top: 170px;
               width: 167px;

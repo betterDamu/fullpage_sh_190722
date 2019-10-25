@@ -1,0 +1,34 @@
+#app{
+  .mask{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 996;
+    .up{
+      background: skyblue;
+      height: 50%;
+      transition: height 1s;
+    }
+    .down{
+      background: skyblue;
+      width: 100%;
+      height: 50%;
+      transition: height 1s;
+      position: absolute;
+      bottom: 0;
+    }
+    .line{
+      width: 0px;
+      height: 6px;
+      background: white;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 997;
+      transition: width 1s;
+    }
+  }
+}

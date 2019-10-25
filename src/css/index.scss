@@ -2,13 +2,15 @@
 @import "./mixin/mixin";
 @import "./extend/extend";
 @import "./font/font";
-
+@import "./inout/inout";
+@import "./mask/mask";
 
 @import "./business/home";
 @import "./business/course";
 @import "./business/works";
 @import "./business/about";
 @import "./business/team";
+
 
 html{
   width: 100%;
@@ -106,6 +108,7 @@ html{
           width: 100%;
           transition: top .3s linear;
           & > li{
+            overflow: hidden;
             position: relative;
             background-repeat: no-repeat;
             //百分比参照于 元素的尺寸 减去 背景图的尺寸
@@ -129,13 +132,10 @@ html{
             }
             &.team{
               background-image:url("../../static/img/bg5.jpg") ;
-              div{
-                background: greenyellow;
-              }
             }
           }
         }
-        .points{
+        & > .points{
           position: fixed;
           right: 15px;
           bottom: 0;

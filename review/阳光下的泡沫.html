@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background: gray;
+    }
+    #app{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="app" width="400" height="400"></canvas>
+</body>
+<script>
+  /*
+    颜色随机
+    位置随机
+    大小固定 可是有动画 逐渐变大
+    透明度固定 可是有动画 逐渐消失
+  */
+  window.onload=function () {
+    var oc = document.querySelector("#app");
+    var ctx = oc.getContext("2d");
+    /*{
+        x,
+        y,
+        radius,
+        r,
+        g,
+        b,
+        a
+      }*/
+    var arr =[];
+
+    //提供圆
+    setInterval(()=>{
+      var x =  Math.round(Math.random() * oc.width);
+      var y =  Math.round(Math.random() * oc.height);
+      var radius = 10;
+      var r = Math.round(Math.random() * 255);
+      var g = Math.round(Math.random() * 255);
+      var b = Math.round(Math.random() * 255);
+      var a = 1;
+
+      arr.push({
+        x,
+        y,
+        radius,
+        r,
+        g,
+        b,
+        a
+      })
+    },100)
+
+    //画圆
+    setInterval(()=>{
+      ctx.clearRect(0, 0, oc.width, oc.height)
+
+      arr.forEach((item,index)=>{
+        item.radius ++;
+        item.a -= 0.01;
+        if(item.a <= 0 ){
+          arr.splice(index,1)
+        }
+      })
+
+
+      arr.forEach((item)=>{
+        ctx.save()
+        ctx.beginPath()
+        ctx.fillStyle = `rgba(${item.r},${item.g},${item.b},${item.a})`;
+        ctx.arc(item.x,item.y,item.radius,0,2*Math.PI)
+        ctx.fill()
+        ctx.restore()
+      })
+    },1000/60)
+
+
+  }
+</script>
+</html>
