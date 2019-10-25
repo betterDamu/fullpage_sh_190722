@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nth-child & nth-of-type</title>
+    <style>
+        /*nth-child: 选中第一个子元素  而且这个子元素必须得是li*/
+       /* #list .item:nth-child(1){
+          background: pink;
+        }*/
+
+        /*选中第一个li子元素*/
+        /*以元素为中心*/
+        #list .item:nth-of-type(1){
+            background: pink;
+        }
+        /*#list div:nth-of-type(1){
+          background: pink;
+        }
+        #list span:nth-of-type(1){
+          background: pink;
+        }
+        #list i:nth-of-type(1){
+          background: pink;
+        }
+        #list p:nth-of-type(1){
+          background: pink;
+        }*/
+
+    </style>
+</head>
+<body>
+  <div id="list">
+    <div class="item">1</div>
+    <span class="item">2</span>
+    <i class="item">3</i>
+    <p class="item">4</p>
+  </div>
+
+
+ <!-- <ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>-->
+</body>
+</html>

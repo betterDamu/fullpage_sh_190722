@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    div{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top:0;
+      bottom: 0;
+      margin: auto;
+    }
+    #wrap{
+      width: 300px;
+      height: 300px;
+      background: pink;
+    }
+    #inner1{
+      width: 200px;
+      height: 200px;
+      background: gray;
+    }
+    #inner2{
+      width: 100px;
+      height: 100px;
+      background: green;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="inner1">
+      <div id="inner2">
+
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  wrap.onmouseenter=function () {
+    console.log("wrap-over")
+  }
+  wrap.onmouseleave=function () {
+    console.log("wrap-out")
+  }
+
+  inner1.onmouseenter=function () {
+    console.log("inner1-over")
+  }
+  inner1.onmouseleave=function () {
+    console.log("inner1-out")
+  }
+
+  inner2.onmouseenter=function () {
+    console.log("inner2-over")
+  }
+  inner2.onmouseleave=function () {
+    console.log("inner2-out")
+  }
+</script>
+</html>

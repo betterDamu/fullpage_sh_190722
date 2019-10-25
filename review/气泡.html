@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background: gray;
+    }
+    #app{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="app" width="200" height="500"></canvas>
+</body>
+<script>
+  window.onload=function () {
+    var oc = document.querySelector("#app");
+    var ctx = oc.getContext("2d");
+    var arr =[];
+
+    //提供圆
+    setInterval(()=>{
+      var radius = Math.round(Math.random()*6) + 4;
+      var x =  Math.round(Math.random() * oc.width);
+      var y =  oc.height - radius ;
+
+      var r = Math.round(Math.random() * 255);
+      var g = Math.round(Math.random() * 255);
+      var b = Math.round(Math.random() * 255);
+      var a = 1;
+
+      var deg = 0;
+      var startX = x;
+      var startY = y;
+      var stepX = Math.round(Math.random()*40) + 10
+      var stepY = Math.round(Math.random()*40) + 10
+
+      arr.push({
+        x,
+        y,
+        radius,
+        r,
+        g,
+        b,
+        a,
+        deg,
+        startX,
+        startY,
+        stepX,
+        stepY
+      })
+    },50)
+
+    //画圆
+    setInterval(()=>{
+      console.log(arr);
+      ctx.clearRect(0, 0, oc.width, oc.height)
+
+      arr.forEach((item,index)=>{
+        item.deg += 5;
+        item.x =  item.startX - (Math.sin( (item.deg*Math.PI)/180 )*item.stepX)
+        item.y =  item.startY - ((item.deg*Math.PI)/180*item.stepY)
+
+        if(item.y < -item.radius){
+          arr.splice(index,1)
+        }
+      })
+
+
+      arr.forEach((item)=>{
+        ctx.save()
+        ctx.beginPath()
+        ctx.fillStyle = `rgba(${item.r},${item.g},${item.b},${item.a})`;
+        ctx.arc(item.x,item.y,item.radius,0,2*Math.PI)
+        ctx.fill()
+        ctx.restore()
+      })
+    },1000/60)
+
+
+  }
+</script>
+</html>

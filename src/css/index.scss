@@ -1,14 +1,163 @@
 @import "./reset/reset";
 @import "./mixin/mixin";
 @import "./extend/extend";
+@import "./font/font";
+@import "./inout/inout";
+@import "./mask/mask";
+
 @import "./business/home";
 @import "./business/course";
 @import "./business/works";
 @import "./business/about";
 @import "./business/team";
 
-#app{
-  width: 100px;
-  height: 100px;
-  background: gray;
+
+html{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    #app{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      .head{
+        position: relative;
+        width: 100%;
+        background: white !important;
+        .headMain{
+          width: 1100px;
+          height: 80px;
+          margin: 0 auto;
+          .logo{
+            margin-top: 30px;
+            float: left;
+          }
+          .nav{
+            margin-top: 50px;
+            float: right;
+            .item{
+              float: left;
+              margin-left: 40px;
+              & > a{
+                position: relative;
+                & > span{
+                  color: #009EE0;
+                  transition: width .5s;
+                  display: block;
+                  &:nth-child(2){
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: black;
+                    width: 0px;
+                    overflow: hidden;
+                  }
+                }
+              }
+              &:hover{
+                & > a{
+                  & > span{
+                    &:nth-child(2){
+                      width: 100%;
+                    }
+                  }
+                }
+              }
+              &:nth-child(1){
+                margin-top: 2px;
+              }
+              &.active{
+                & > a{
+                  & > span{
+                    &:nth-child(2){
+                      width: 100%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .arrow{
+            transition: left .5s;
+            z-index: 9;
+            position: absolute;
+            bottom: -11px;
+            left: 50%;
+            width: 21px;
+            height: 11px;
+            background: url("../../static/img/menuIndicator.png") no-repeat;
+          }
+        }
+      }
+      .content{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 80px;
+        bottom: 0;
+        overflow: hidden;
+        & > .list{
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          transition: top .3s linear;
+          & > li{
+            overflow: hidden;
+            position: relative;
+            background-repeat: no-repeat;
+            //百分比参照于 元素的尺寸 减去 背景图的尺寸
+            background-position: 50% 50%;
+            & > div{
+              @include V-H-Center();
+              width: 1100px;
+              height: 520px;
+            }
+            &.home{
+              background-image:url("../../static/img/bg1.jpg") ;
+            }
+            &.course{
+              background-image:url("../../static/img/bg2.jpg") ;
+            }
+            &.works{
+              background-image:url("../../static/img/bg1.jpg") ;
+            }
+            &.about{
+              background-image:url("../../static/img/bg4.jpg") ;
+            }
+            &.team{
+              background-image:url("../../static/img/bg5.jpg") ;
+            }
+          }
+        }
+        & > .points{
+          position: fixed;
+          right: 15px;
+          bottom: 0;
+          top: 0;
+          margin: auto;
+          width: 25px;
+          height:150px  ;
+          li{
+            width: 25px;
+            height: 25px;
+            border: 2px solid green;
+            border-radius:50%;
+            margin-bottom: 5px;
+            &.active{
+              background: white;
+            }
+            &:hover{
+              cursor:pointer;
+            }
+          }
+        }
+      }
+    }
+  }
 }
